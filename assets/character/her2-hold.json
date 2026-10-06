@@ -1,0 +1,22 @@
+{
+  "canvas": {
+    "w": 360,
+    "h": 600
+  },
+  "bouquet": {
+    "x": 85.0,
+    "y": 157.5,
+    "width": 146,
+    "height": 269,
+    "rotate": -14,
+    "mirror": true,
+    "origin": "center",
+    "src": "her2-bouquet.webp (or bouquet.webp)"
+  },
+  "layers": [
+    "her2-hold (body, upper arms)",
+    "bouquet (mirrored, rotated about its centre)",
+    "her2-hold-arms (forearms + hands)"
+  ],
+  "note": "her2 canvas px == his sprite px (him-side is 604 tall). x,y = top-left of the UNROTATED bouquet box; CSS: translate(x,y) rotate(rotate deg) scaleX(-1) with transform-origin centre."
+}

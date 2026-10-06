@@ -3,7 +3,10 @@
 
    The sunset of stage 3 cools into twilight: a camera pull-back reveals the
    two of us from behind on a moonlit hill of roses, under a crescent moon,
-   stars and a faint pink nebula. The title and the closing lines arrive one
+   stars and a faint pink nebula. The bouquet is hers now (he gave it to her
+   at the end of stage 3): she (Sazzi, her2-back-hold.webp — her right hand
+   tucked in front of her) holds it low at her right hip, blooms tipped
+   outward past her side. The title and the closing lines arrive one
    by one, then "One More Thing…" opens a wax-sealed letter. Closing the
    letter ends the film: a hand-drawn heart, petals, and "Watch it again".
 
@@ -19,6 +22,8 @@
   if (!window.Love || !window.gsap) return;
   const { util } = Love;
   const TAU = Math.PI * 2;
+  // her stage-4 sprite (also in main.js's preload list) — warm the cache now so she never pops in
+  try { const im = new Image(); im.decoding = 'async'; im.src = 'assets/character/her2-back-hold.webp'; } catch (e) { /* ignore */ }
 
   /* -------------------------------------------------------------- content */
   const DEF = {
@@ -325,6 +330,7 @@
   let ended = false;
   let reduced = false;
   let envIdle = null, endBeat = null;
+  let envAt = 0;              // when the envelope was summoned (a fast double-tap must not dismiss it)
   let parallax = null;
   let lastFocus = null;
   let shootingOn = false;
@@ -374,7 +380,7 @@
 </svg>
 
 <div class="s4-scene">
-  <div class="s4-world" role="img" aria-label="The two of us on a hill of roses, under the moon and the stars">
+  <div class="s4-world" role="img" aria-label="The two of us on a hill of roses under the moon and the stars, her bouquet in her hand">
     <div class="s4-sky">
       <div class="s4-sky__base"></div>
       <div class="s4-nebula"><i class="s4-nebula__a"></i><i class="s4-nebula__b"></i><i class="s4-nebula__c"></i></div>
@@ -416,8 +422,11 @@
         <div class="s4-meadow">${meadow()}</div>
         <div class="s4-couple">
           <span class="s4-pool"></span>
-          <img class="s4-him" src="assets/character/him-back.webp" alt="" draggable="false" decoding="async">
-          <img class="s4-her" src="assets/character/her-back.svg" alt="" draggable="false" decoding="async">
+          <img class="s4-him" src="assets/character/him-back-empty.webp" alt="" draggable="false" decoding="async">
+          <span class="s4-her">
+            <img class="s4-her__bq" src="assets/character/bouquet.webp" alt="" draggable="false" decoding="async">
+            <img class="s4-her__img" src="assets/character/her2-back-hold.webp" alt="" draggable="false" decoding="async">
+          </span>
           <span class="s4-couple__heart"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="${HEART_SM}" fill="url(#s4-heart-sm)"/></svg></span>
           <div class="s4-feet"><span class="s4-feet__ground"></span>${flowers(FEET)}</div>
         </div>
@@ -532,7 +541,7 @@
       shoot: q('.s4-shoot'), moon: q('.s4-moon'), moonGlow: q('.s4-moon__glow'),
       afterglow: q('.s4-afterglow'), horizon: q('.s4-horizon'),
       land: q('.s4-land'), far: q('.s4-far'), near: q('.s4-near'), fores: q('.s4-fores'),
-      couple: q('.s4-couple'), him: q('.s4-him'), her: q('.s4-her'), cheart: q('.s4-couple__heart'),
+      couple: q('.s4-couple'), him: q('.s4-him'), her: q('.s4-her'), bq: q('.s4-her__bq'), cheart: q('.s4-couple__heart'),
       sway: Array.from(el.querySelectorAll('.s4-sway')),
       meadowEls: Array.from(el.querySelectorAll('.s4-mfl')), hillNear: q('.s4-hill--near'), ridge: q('.s4-hill--ridge'), ridgePath: q('.s4-hill--ridge path'),
       fx: q('.s4-fx'),
@@ -584,7 +593,7 @@
       E.replay.disabled = true;
       Love.restart();
     });
-    E.dim.addEventListener('click', () => { if (state === 'envelope') cancelEnvelope(); });
+    E.dim.addEventListener('click', () => { if (state === 'envelope' && performance.now() - envAt > 700) cancelEnvelope(); });
   }
 
   function sealSVG() {
@@ -733,6 +742,9 @@
       // the two of them, breathing
       keep(gsap.to(E.him, { scaleY: 1.008, transformOrigin: '50% 100%', duration: 2.9, ease: 'sine.inOut', yoyo: true, repeat: -1 }));
       keep(gsap.to(E.her, { scaleY: 1.009, transformOrigin: '50% 100%', duration: 3.3, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: -1.2 }));
+      // …and the bouquet in her hand rocks with her breath (about its grip,
+      // which is hidden behind her hip; CSS rests it at 45°)
+      keep(gsap.fromTo(E.bq, { rotation: 44.2, transformOrigin: '38.356% 59.48%' }, { rotation: 46, duration: 3.3, ease: 'sine.inOut', yoyo: true, repeat: -1, delay: -2.1 }));
     }
   }
 
@@ -794,9 +806,11 @@
       if (i === 1 && !R) t.call(shootStar, null, at + 1.6);
     });
 
-    /* --- the last line is the tender beat: she leans into him */
+    /* --- the last line is the tender beat: she leans her head toward his
+       shoulder (bouquet and all), and a breath later he leans in to meet her */
     if (!R && E.lines.length) {
-      t.to(E.her, { rotation: -1.8, x: -3, transformOrigin: '50% 100%', duration: 3.2, ease: 'sine.inOut' }, at + 0.2);
+      t.to(E.her, { rotation: -2.6, x: -2, transformOrigin: '50% 100%', duration: 3.4, ease: 'sine.inOut' }, at + 0.2);
+      t.to(E.him, { rotation: 0.8, x: 1, transformOrigin: '50% 100%', duration: 3, ease: 'sine.inOut' }, at + 1.1);
       t.fromTo(E.cheart, { opacity: 0, y: 6, scale: 0.4 }, { opacity: 1, y: -16, scale: 1, duration: 1.8, ease: 'power2.out' }, at + 1.8);
       t.to(E.cheart, { opacity: 0, y: -46, duration: 2.2, ease: 'sine.in' }, at + 3.6);
     }
@@ -840,6 +854,7 @@
   function showEnvelope() {
     if (state !== 'sky') return;
     state = 'envelope';
+    envAt = performance.now();
     lastFocus = document.activeElement;
     setOverlayOpen(true);
     makeLetterFx();

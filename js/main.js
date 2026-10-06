@@ -18,18 +18,30 @@
 
   /* every image the experience needs, so nothing pops in mid-cinematic */
   const C = Love.config;
+  const CH = 'assets/character/';
+  const herCustom = !!(C.her && C.her.sprite);
   const critical = [
-    'assets/character/him-side.webp',
-    'assets/character/him-front.webp',
-    'assets/character/him-back.webp',
-    'assets/character/her-side.svg',
-    'assets/character/her-side-react.svg',
-    'assets/character/her-back.svg',
-    'assets/character/face-happy.webp',
-    'assets/character/face-determined.webp',
-    ...(C.her && C.her.sprite ? [C.her.sprite] : []),
+    // him (stage 3: standing, handoff layers, cut-ins; stage 4: from behind)
+    'him-side.webp', 'him-side-empty.webp', 'him-side-legs.webp', 'him-side-hands.webp',
+    'him-face-soft.webp', 'him-back-empty.webp', 'face-happy.webp', 'face-determined.webp',
+    // the bouquet (stage 3 in his / her hands, stage 4 at her side)
+    'her2-bouquet.webp', 'bouquet.webp',
+    // her (Sazzi): stage 4 from behind…
+    'her2-back-hold.webp',
+    // …and the stage 3 rig: poses, face overlays, live forearms, hold arms,
+    // close-up head plates, the walk cut-in busts
+    ...(herCustom ? [] : [
+      'her2-wait.webp', 'her2-react-mid.webp', 'her2-react.webp', 'her2-hold.webp',
+      'her2-smile.webp', 'her2-blink.webp', 'her2-hold-arms.webp',
+      'her2-arm-far-cap.webp', 'her2-arm-far-sleeve.webp', 'her2-arm-far-hand.webp',
+      'her2-arm-near-cap.webp', 'her2-arm-near-sleeve.webp', 'her2-arm-near-hand.webp',
+      'her2-cu-happy.webp', 'her2-cu-look.webp', 'her2-cu-blink.webp', 'her2-cu-laugh.webp',
+      'her2-cutR-surprised.webp', 'her2-cutR-blink.webp', 'her2-cutR-happy.webp',
+    ]),
+  ].map((f) => CH + f).concat([
+    ...(herCustom ? [C.her.sprite] : []),
     ...((C.stage2 && C.stage2.moments) || []).map((m) => m.photo + '.webp'),
-  ];
+  ]);
 
   /* ------------------------------------------------------- sound toggle */
   const soundBtn = document.getElementById('sound-toggle');
@@ -62,6 +74,14 @@
     const first = Love.stages.find((s) => s.index === startAt) ? startAt : Love.stages[0].index;
     await Love.go(first, { instant: true });
     document.getElementById('loader').classList.add('is-done');
+
+    // the walk strips stage 3 draws (start, 24-frame cycle, stop on the left
+    // heel: WALK_STEPS is odd) are ~1.7 MB: fetch them quietly during stages 1–2
+    util.preload([
+      'assets/character/walk/walk-start-strip.webp',
+      'assets/character/walk/walk-strip-24.webp',
+      'assets/character/walk/walk-stop-l-strip.webp',
+    ]);
 
     if (params.has('seek')) {
       // let the stage build its timeline first

@@ -3,8 +3,8 @@
    Plain text only. Use \n for a line break inside a string.
    ========================================================================== */
 window.LOVE_CONFIG = {
-  /* Which monthsary is this? (4 → "4th") */
-  monthsary: 4,
+  /* Which monthsary is this? (3 → "3rd") */
+  monthsary: 3,
 
   /* What the site calls her, and how you sign off. */
   herName: 'My Love',
@@ -22,9 +22,10 @@ window.LOVE_CONFIG = {
     volume: 0.8,
   },
 
-  /* Her character in the walking scene. null = the built-in illustrated
-     silhouette. To use your own art, set a transparent PNG/WebP of her full
-     body FACING LEFT, feet at the bottom edge, e.g. 'assets/character/her.png'. */
+  /* Her character in the walking scene. null = Sazzi, the built-in animated
+     character (cut from images/sazzi.png). To use a single still image
+     instead, set a transparent PNG/WebP of her full body FACING LEFT, feet at
+     the bottom edge, e.g. 'assets/character/her.png'. */
   her: {
     sprite: null,
   },
@@ -124,7 +125,7 @@ window.LOVE_CONFIG = {
     letter: {
       greeting: 'To my love,',
       paragraphs: [
-        'Four months ago I didn’t know that someone could become my favourite part of every single day. Now I can’t imagine a day without you in it.',
+        'Three months ago I didn’t know that someone could become my favourite part of every single day. Now I can’t imagine a day without you in it.',
         'Thank you for the late-night calls, for your patience, for your laugh, and for choosing me even on the days I’m not easy to choose. You make me want to be better — not because you ask me to, but because you deserve it.',
         'I don’t know everything the next months will bring, but I know I want to spend them with you. Same cap, same bouquet, same heart — always walking toward you.',
       ],

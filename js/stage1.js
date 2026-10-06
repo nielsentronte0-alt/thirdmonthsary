@@ -5,7 +5,7 @@
            Any tap / click / Enter / Space → audio.unlock(), the heart blooms
            into light and the world wakes up.
    STEP B  title sequence on one master GSAP timeline (seekable):
-           eyebrow → "Happy 4th Monthsary," → "My Love" (script, chime) + heart
+           eyebrow → "Happy {nth} Monthsary," → "My Love" (script, chime) + heart
            → subtitle → "Open Your Surprise".
    CTA     whoosh + petal / sparkle burst, content rises away into the light,
            Love.next().  leave() fades the world to black and stops everything.
@@ -460,7 +460,7 @@
     tl.fromTo(S.eyebrow, { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 1.5 }, t0)
       .fromTo(S.rules, { scaleX: 0 }, { scaleX: 1, duration: 1.8, ease: 'expo.out' }, t0 + 0.25);
 
-    // "Happy 4th Monthsary," — words rise out of a soft blur
+    // "Happy {nth} Monthsary," — words rise out of a soft blur
     tl.fromTo(S.words, { autoAlpha: 0, yPercent: 42, filter: 'blur(14px)' },
       { autoAlpha: 1, yPercent: 0, filter: 'blur(0px)', duration: 1.7, stagger: 0.2 }, t0 + 0.55);
 

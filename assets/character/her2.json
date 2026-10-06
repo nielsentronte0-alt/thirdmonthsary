@@ -1,0 +1,543 @@
+{
+  "name": "Sazzi (her) \u2014 stage-3 rig built from images/sazzi.png (mirrored 3/4 view, facing LEFT toward him)",
+  "canvas": {
+    "w": 360,
+    "h": 600
+  },
+  "pixelScale": "1 her2 px == 1 his sprite px (him-side.webp is 255x604 incl. cap). On screen: px * U/604.",
+  "groundY": 600,
+  "soles": {
+    "near": {
+      "x": [
+        233,
+        292
+      ],
+      "bottomY": 600
+    },
+    "far": {
+      "x": [
+        64,
+        137
+      ],
+      "bottomY": 595
+    },
+    "note": "near (camera-side) foot is the right shoe; the far foot plants ~5 px higher, like his walk"
+  },
+  "feetCenterX": 181,
+  "figureBox": {
+    "x": 64,
+    "y": 9,
+    "w": 231,
+    "h": 591,
+    "note": "her2-wait; reach poses extend left to x=10"
+  },
+  "anchor": "box bottom-centre: canvas (180, 600) sits on the ground at xHer",
+  "head": {
+    "box": {
+      "x": 100,
+      "y": 9,
+      "w": 140,
+      "h": 123
+    },
+    "bandanaTop": 9,
+    "chin": [
+      162,
+      131
+    ],
+    "faceCenter": [
+      150,
+      100
+    ],
+    "mouth": [
+      155,
+      115
+    ],
+    "note": "the head is pixel-identical in every her2 pose (only the arms change): overlays work on all"
+  },
+  "eyes": {
+    "box": {
+      "x": 117,
+      "y": 75,
+      "w": 60,
+      "h": 25
+    },
+    "near": [
+      164,
+      83
+    ],
+    "far": [
+      128,
+      94
+    ]
+  },
+  "pivots": {
+    "near": {
+      "shoulder": [
+        227.0,
+        166.0
+      ],
+      "elbow": [
+        226.0,
+        258.0
+      ],
+      "wrist": [
+        221.5,
+        344.0
+      ],
+      "elbowRadius": 17.0
+    },
+    "far": {
+      "shoulder": [
+        118.0,
+        170.0
+      ],
+      "elbow": [
+        106.0,
+        278.0
+      ],
+      "wrist": [
+        92.5,
+        337.0
+      ],
+      "elbowRadius": 8.0
+    },
+    "note": "near = her right arm (camera side, right of the canvas); far = her left arm (toward him). Upper arms never move."
+  },
+  "poses": {
+    "her2-wait": {
+      "kind": "full",
+      "arms": "hanging (the sheet's own drawing, untouched)",
+      "hands": {
+        "near": {
+          "palm": [
+            217.0,
+            368.0
+          ]
+        },
+        "far": {
+          "palm": [
+            87.0,
+            360.0
+          ]
+        }
+      }
+    },
+    "her2-react-mid": {
+      "kind": "full",
+      "arms": "in-between wait -> react (forearms coming toward camera, hands meet low)",
+      "hands": {
+        "near": {
+          "palm": [
+            161.8,
+            274.3
+          ],
+          "elbow": [
+            226.0,
+            258.0
+          ],
+          "forearmDeg": 70,
+          "foreshorten": 0.6,
+          "wristDeg": 0
+        },
+        "far": {
+          "palm": [
+            149.4,
+            296.5
+          ],
+          "elbow": [
+            106.0,
+            278.0
+          ],
+          "forearmDeg": -80,
+          "foreshorten": 0.56,
+          "wristDeg": 0
+        }
+      }
+    },
+    "her2-react": {
+      "kind": "full",
+      "arms": "both hands clasped at her chest/heart (near hand on top), delighted",
+      "hands": {
+        "near": {
+          "palm": [
+            166.5,
+            202.0
+          ],
+          "elbow": [
+            226.0,
+            258.0
+          ],
+          "forearmDeg": 128,
+          "foreshorten": 0.74,
+          "wristDeg": 0
+        },
+        "far": {
+          "palm": [
+            150.2,
+            227.2
+          ],
+          "elbow": [
+            106.0,
+            278.0
+          ],
+          "forearmDeg": -152,
+          "foreshorten": 0.8,
+          "wristDeg": 0
+        }
+      }
+    },
+    "her2-reach-1": {
+      "kind": "full",
+      "arms": "in-between: forearms starting to lift toward him",
+      "hands": {
+        "near": {
+          "palm": [
+            172.4,
+            348.1
+          ],
+          "elbow": [
+            226.0,
+            258.0
+          ],
+          "forearmDeg": 26,
+          "foreshorten": 0.95,
+          "wristDeg": 4
+        },
+        "far": {
+          "palm": [
+            51.4,
+            336.4
+          ],
+          "elbow": [
+            106.0,
+            278.0
+          ],
+          "forearmDeg": 30,
+          "foreshorten": 0.95,
+          "wristDeg": 6
+        }
+      },
+      "note": "stage 3 now plays the reach with the live arms (same params); the drawing is kept as reference"
+    },
+    "her2-reach-2": {
+      "kind": "full",
+      "arms": "far hand reaching out toward him, near hand coming to the front to receive",
+      "hands": {
+        "near": {
+          "palm": [
+            142.8,
+            308.2
+          ],
+          "elbow": [
+            226.0,
+            258.0
+          ],
+          "forearmDeg": 54,
+          "foreshorten": 0.88,
+          "wristDeg": 8
+        },
+        "far": {
+          "palm": [
+            36.1,
+            296.7
+          ],
+          "elbow": [
+            106.0,
+            278.0
+          ],
+          "forearmDeg": 62,
+          "foreshorten": 0.86,
+          "wristDeg": 14
+        }
+      },
+      "note": "stage 3 now plays the reach with the live arms (same params); the drawing is kept as reference"
+    },
+    "her2-hold": {
+      "kind": "body under the bouquet (upper arms + torso, forearms removed)",
+      "pairsWith": "her2-hold-arms"
+    },
+    "her2-hold-arms": {
+      "kind": "forearms + hands only, drawn IN FRONT of the bouquet",
+      "hands": {
+        "near": {
+          "palm": [
+            178.2,
+            318.7
+          ],
+          "elbow": [
+            226.0,
+            258.0
+          ],
+          "forearmDeg": 32.798761702479624,
+          "foreshorten": 0.7,
+          "wristDeg": 0
+        },
+        "far": {
+          "palm": [
+            151.8,
+            315.1
+          ],
+          "elbow": [
+            106.0,
+            278.0
+          ],
+          "forearmDeg": -64.05464302044312,
+          "foreshorten": 0.7,
+          "wristDeg": 0
+        }
+      }
+    }
+  },
+  "overlays": {
+    "her2-blink": {
+      "what": "both eyes closed (eyelid skin + soft lash lines)",
+      "box": [
+        114,
+        71,
+        181,
+        104
+      ],
+      "use": "on top of any pose; ~0.12 s blinks every 3-5 s; also 'eyes closed in joy' with her2-smile"
+    },
+    "her2-smile": {
+      "what": "open happy smile with teeth (mouth from the sheet's HAPPY bust, landmark-aligned)",
+      "box": [
+        135,
+        101,
+        176,
+        129
+      ],
+      "use": "on top of any pose (react, hold, close-up); dissolve in ~0.25 s"
+    }
+  },
+  "bouquet": {
+    "file": "her2-bouquet.webp",
+    "size": [
+      146,
+      269
+    ],
+    "note": "bouquet.webp with the flat pink grip patch rebuilt into a gathered wrap neck; identical box/registration (drop-in for bouquet.webp, also in his hands \u2014 his hands overlay covers the neck)",
+    "hold": "her2-hold.json"
+  },
+  "busts": {
+    "files": [
+      "her2-face-neutral-L",
+      "her2-face-happy-L",
+      "her2-face-surprised-L",
+      "her2-face-determined-L",
+      "her2-face-laughing-L"
+    ],
+    "facing": "LEFT (the sheet busts face right; these are mirrored, shirt logo flipped back)"
+  },
+  "layerOrder": {
+    "default": [
+      "her2-<pose>",
+      "her2-smile (opt)",
+      "her2-blink (opt)"
+    ],
+    "hold": [
+      "her2-hold",
+      "bouquet (mirrored)",
+      "her2-hold-arms",
+      "her2-smile (opt)",
+      "her2-blink (opt)"
+    ]
+  },
+  "files": [
+    "her2-arm-far-cap.webp",
+    "her2-arm-far-hand.webp",
+    "her2-arm-far-sleeve.webp",
+    "her2-arm-near-cap.webp",
+    "her2-arm-near-hand.webp",
+    "her2-arm-near-sleeve.webp",
+    "her2-blink.webp",
+    "her2-bouquet.webp",
+    "her2-cu-blink.webp",
+    "her2-cu-happy.webp",
+    "her2-cu-laugh.webp",
+    "her2-cu-look.webp",
+    "her2-cut-happy.webp",
+    "her2-cut-surprised.webp",
+    "her2-cutR-blink.webp",
+    "her2-cutR-happy.webp",
+    "her2-cutR-surprised.webp",
+    "her2-face-determined-L.webp",
+    "her2-face-happy-L.webp",
+    "her2-face-laughing-L.webp",
+    "her2-face-neutral-L.webp",
+    "her2-face-surprised-L.webp",
+    "her2-hold-arms.webp",
+    "her2-hold.webp",
+    "her2-reach-1.webp",
+    "her2-reach-2.webp",
+    "her2-react-mid.webp",
+    "her2-react.webp",
+    "her2-smile.webp",
+    "her2-wait.webp"
+  ],
+  "liveArms": {
+    "far": {
+      "elbow": [
+        106.0,
+        278.0
+      ],
+      "wrist": [
+        92.5,
+        337.0
+      ],
+      "axis": 103.0,
+      "palm": [
+        87.0,
+        360.0
+      ],
+      "parts": {
+        "cap": {
+          "file": "her2-arm-far-cap.webp",
+          "box": [
+            95,
+            267,
+            22,
+            22
+          ]
+        },
+        "sleeve": {
+          "file": "her2-arm-far-sleeve.webp",
+          "box": [
+            77,
+            276,
+            39,
+            65
+          ]
+        },
+        "hand": {
+          "file": "her2-arm-far-hand.webp",
+          "box": [
+            72,
+            332,
+            31,
+            61
+          ]
+        }
+      },
+      "params": {
+        "wait": [
+          0,
+          1,
+          0
+        ],
+        "reach1": [
+          30,
+          0.95,
+          6
+        ],
+        "reach2": [
+          62,
+          0.86,
+          14
+        ],
+        "hold": [
+          -64.05464302044312,
+          0.7,
+          0
+        ]
+      }
+    },
+    "near": {
+      "elbow": [
+        226.0,
+        258.0
+      ],
+      "wrist": [
+        221.5,
+        344.0
+      ],
+      "axis": 93.0,
+      "palm": [
+        217.0,
+        368.0
+      ],
+      "parts": {
+        "cap": {
+          "file": "her2-arm-near-cap.webp",
+          "box": [
+            206,
+            238,
+            40,
+            40
+          ]
+        },
+        "sleeve": {
+          "file": "her2-arm-near-sleeve.webp",
+          "box": [
+            204,
+            256,
+            46,
+            92
+          ]
+        },
+        "hand": {
+          "file": "her2-arm-near-hand.webp",
+          "box": [
+            197,
+            339,
+            42,
+            61
+          ]
+        }
+      },
+      "params": {
+        "wait": [
+          0,
+          1,
+          0
+        ],
+        "reach1": [
+          26,
+          0.95,
+          4
+        ],
+        "reach2": [
+          54,
+          0.88,
+          8
+        ],
+        "hold": [
+          32.798761702479624,
+          0.7,
+          0
+        ]
+      }
+    },
+    "what": "her forearms as separate parts for the handoff (stage3.js ARM / liveArms): cap = elbow end + ink ring (static), sleeve and hand (the hand reaches 5 px up under the cuff). The browser turns .fore by rotate(deg) and foreshortens it by s along the source forearm axis (axis deg) about the elbow, and bends the hand by h about the wrist: params [deg, s, h], the same 2D rig the arm drawings were made with (her-rig/pose.py). At 'hold' they are exactly her2-hold-arms; at 'wait' her2-wait's forearms.",
+    "boxNote": "part boxes [x, y, w, h] on the 360x600 her2 canvas"
+  },
+  "plates": {
+    "box": [
+      70,
+      0,
+      212,
+      172
+    ],
+    "size": [
+      345,
+      280
+    ],
+    "files": {
+      "her2-cu-happy": "happy, looking at the camera (the close-up)",
+      "her2-cu-look": "the same with her irises slid toward screen-left: she looks at HIM (the two-shots)",
+      "her2-cu-blink": "closed eyes (blinks, eyes-closed-in-joy, and the bridge frame of every expression cut)",
+      "her2-cu-laugh": "laughing (arrival, giggle)"
+    },
+    "use": "bust-resolution head plates over the rig head; expression changes are hard cuts through her2-cu-blink"
+  },
+  "cutIn": {
+    "files": [
+      "her2-cutR-surprised",
+      "her2-cutR-blink",
+      "her2-cutR-happy"
+    ],
+    "facing": "the sheet's own orientation: face turned a little to screen-right, irises looking screen-LEFT (toward him)",
+    "registration": "onto the happy bust (296x301) by the face: [w, h, centre dx, centre dy, scale, rotate deg] happy/blink [296,301,0,0,1,0], surprised [302,301,8,2,0.96,1]",
+    "use": "surprised -> blink (0.09 s) -> happy, hard cuts"
+  }
+}

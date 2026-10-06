@@ -9,7 +9,7 @@
   --hz: calc(100% - var(--land-h));       /* horizon line, from the top */
   --crest: 30%;                           /* near-hill crest, from the land top */
   --cx: 50%;                              /* where the couple stands */
-  --ch: clamp(140px, 21vh, 250px);        /* his height; hers is 98% (her art already draws her shorter) */
+  --ch: clamp(140px, 21vh, 250px);        /* his height; hers is 593/606 of it (sheet scale) */
   --fore-h: clamp(150px, 27vh, 300px);    /* foreground flower clusters */
   --moon: clamp(38px, 10.5vw, 76px);
   --moon-x: 9%;
@@ -183,10 +183,38 @@
           drop-shadow(0 0 14px rgba(160, 140, 230, .16));
 }
 #stage-4 .s4-him { height: 100%; left: calc(var(--ch) * -.37); }
-#stage-4 .s4-her { height: 98%; left: calc(var(--ch) * -.118); }
+/* her (Sazzi, from behind): a group (her art + the bouquet he gave her) so the
+   moonlit grade, the rim light, her breathing and the final lean all apply to
+   both as one. Both sprites are at character-sheet pixel scale: him-back-empty
+   is 260×606, her2-back-hold 228×593 → she is 593/606 of his height. She
+   stands at his right, close (her left arm just clear of his right elbow). */
+#stage-4 .s4-her {
+  display: block;
+  height: 97.855%; width: calc(var(--ch) * .37624);   /* 228×593 at his 606 */
+  left: calc(var(--ch) * -.0235);
+}
+#stage-4 .s4-her__img,
+#stage-4 .s4-her__bq { position: absolute; display: block; max-width: none; }
+#stage-4 .s4-her__img { left: 0; top: 0; width: 100%; height: 100%; }
+/* the bouquet: held low in her right hand, in front of her right hip (her
+   hand is tucked in front of her, so it is drawn BEHIND her layer), blooms
+   tipped outward past her side, away from him. Same scale as in his arms in
+   stage 3 (bouquet.webp 146×269 at sheet scale = 64.035% × 45.363% of her
+   box). Placed in her2-back px: the wrap's grip point (56,160) sits at
+   (126,380), behind her hip, rotated 45° about it. Everything below the grip
+   line (the flat patch where his hands were, the ribbon tails) is masked
+   away — it would be hidden behind her anyway. */
+#stage-4 .s4-her__bq {
+  left: 30.702%; top: 37.099%;
+  width: 64.035%; height: auto;
+  transform-origin: 38.356% 59.48%;
+  transform: rotate(45deg);
+  -webkit-mask-image: linear-gradient(to bottom, #000 49.8%, rgba(0, 0, 0, 0) 51%);
+  mask-image: linear-gradient(to bottom, #000 49.8%, rgba(0, 0, 0, 0) 51%);
+}
 #stage-4 .s4-couple__heart {
   position: absolute; display: block;
-  left: calc(var(--ch) * -.055); bottom: calc(var(--ch) * .93);
+  left: calc(var(--ch) * -.06); bottom: calc(var(--ch) * .93);
   width: calc(var(--ch) * .11); aspect-ratio: 1;
   opacity: 0;
   filter: drop-shadow(0 0 6px rgba(255, 120, 150, .75));

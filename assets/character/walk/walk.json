@@ -1,0 +1,1566 @@
+{
+ "frames": 12,
+ "cellW": 320,
+ "cellH": 618,
+ "groundY": 614,
+ "farGroundY": 604,
+ "hipX": 132,
+ "strideCycle": 288.0,
+ "fps": 10,
+ "contactFrames": [
+  0,
+  6
+ ],
+ "recommended": {
+  "file": "walk-strip-24.webp",
+  "filePng": "walk-strip-24.png",
+  "frames": 24,
+  "fps": 20,
+  "snap": true,
+  "snapStep": 12.0,
+  "speed": 240.0,
+  "how": "frame = floor(d / snapStep) % 24; draw the cell with its (hipX, groundY) at x0 + floor(d / snapStep) * snapStep * scale (d = distance walked in sprite px, advance d by speed * dt). Feet stay locked; the body moves in 12-sprite-px (~6 screen px at 300 px tall) steps 20 times a second."
+ },
+ "legs": {
+  "near": "right",
+  "far": "left",
+  "nearIsFullColour": true
+ },
+ "files": {
+  "strip": "walk-strip.webp",
+  "stripPng": "walk-strip.png",
+  "strip24": "walk-strip-24.webp",
+  "strip24Png": "walk-strip-24.png",
+  "stand": "walk-stand.webp",
+  "standPng": "walk-stand.png",
+  "start": "walk-start-strip.webp",
+  "stopRight": "walk-stop-r-strip.webp",
+  "stopLeft": "walk-stop-l-strip.webp"
+ },
+ "keys": {
+  "contact": [
+   0,
+   6
+  ],
+  "down": [
+   1,
+   7
+  ],
+  "passing": [
+   3,
+   9
+  ],
+  "up": [
+   4,
+   10
+  ],
+  "rightFootContact": 0,
+  "leftFootContact": 6,
+  "keys24": {
+   "contact": [
+    0,
+    12
+   ],
+   "down": [
+    2,
+    14
+   ],
+   "passing": [
+    6,
+    18
+   ],
+   "up": [
+    8,
+    20
+   ]
+  }
+ },
+ "hipY": [
+  403.0,
+  404.0,
+  398.0,
+  393.5,
+  392.0,
+  398.53,
+  403.0,
+  404.0,
+  398.0,
+  393.5,
+  392.0,
+  398.53
+ ],
+ "feet": [
+  {
+   "near": {
+    "x": 173.5,
+    "heel": 164.2,
+    "toe": 282.6,
+    "lift": 0.0,
+    "planted": true
+   },
+   "far": {
+    "x": 107.4,
+    "heel": 26.1,
+    "toe": 144.5,
+    "lift": 0.0,
+    "planted": true
+   }
+  },
+  {
+   "near": {
+    "x": 215.5,
+    "heel": 140.4,
+    "toe": 262.2,
+    "lift": 0.0,
+    "planted": true
+   },
+   "far": {
+    "x": 85.2,
+    "heel": 9.4,
+    "toe": 120.5,
+    "lift": 0.0,
+    "planted": true
+   }
+  },
+  {
+   "near": {
+    "x": 194.5,
+    "heel": 116.5,
+    "toe": 238.5,
+    "lift": 0.0,
+    "planted": true
+   },
+   "far": {
+    "x": 123.1,
+    "heel": 23.5,
+    "toe": 130.0,
+    "lift": 4.2,
+    "planted": false
+   }
+  },
+  {
+   "near": {
+    "x": 170.5,
+    "heel": 92.5,
+    "toe": 214.5,
+    "lift": 0.0,
+    "planted": true
+   },
+   "far": {
+    "x": 186.2,
+    "heel": 80.4,
+    "toe": 196.5,
+    "lift": 3.2,
+    "planted": false
+   }
+  },
+  {
+   "near": {
+    "x": 146.5,
+    "heel": 68.7,
+    "toe": 190.5,
+    "lift": 0.0,
+    "planted": true
+   },
+   "far": {
+    "x": 223.8,
+    "heel": 133.9,
+    "toe": 255.4,
+    "lift": 8.8,
+    "planted": false
+   }
+  },
+  {
+   "near": {
+    "x": 122.5,
+    "heel": 45.3,
+    "toe": 166.5,
+    "lift": 0.0,
+    "planted": true
+   },
+   "far": {
+    "x": 184.1,
+    "heel": 169.3,
+    "toe": 290.1,
+    "lift": 8.2,
+    "planted": false
+   }
+  },
+  {
+   "near": {
+    "x": 105.4,
+    "heel": 24.1,
+    "toe": 142.5,
+    "lift": 0.0,
+    "planted": true
+   },
+   "far": {
+    "x": 175.5,
+    "heel": 166.2,
+    "toe": 284.6,
+    "lift": 0.0,
+    "planted": true
+   }
+  },
+  {
+   "near": {
+    "x": 83.2,
+    "heel": 7.4,
+    "toe": 118.5,
+    "lift": 0.0,
+    "planted": true
+   },
+   "far": {
+    "x": 217.5,
+    "heel": 142.4,
+    "toe": 264.2,
+    "lift": 0.0,
+    "planted": true
+   }
+  },
+  {
+   "near": {
+    "x": 121.1,
+    "heel": 21.5,
+    "toe": 128.0,
+    "lift": 4.2,
+    "planted": false
+   },
+   "far": {
+    "x": 196.5,
+    "heel": 118.5,
+    "toe": 240.5,
+    "lift": 0.0,
+    "planted": true
+   }
+  },
+  {
+   "near": {
+    "x": 184.2,
+    "heel": 78.4,
+    "toe": 194.5,
+    "lift": 3.2,
+    "planted": false
+   },
+   "far": {
+    "x": 172.5,
+    "heel": 94.5,
+    "toe": 216.5,
+    "lift": 0.0,
+    "planted": true
+   }
+  },
+  {
+   "near": {
+    "x": 221.8,
+    "heel": 131.9,
+    "toe": 253.4,
+    "lift": 8.8,
+    "planted": false
+   },
+   "far": {
+    "x": 148.5,
+    "heel": 70.7,
+    "toe": 192.5,
+    "lift": 0.0,
+    "planted": true
+   }
+  },
+  {
+   "near": {
+    "x": 182.1,
+    "heel": 167.3,
+    "toe": 288.1,
+    "lift": 8.2,
+    "planted": false
+   },
+   "far": {
+    "x": 124.5,
+    "heel": 47.3,
+    "toe": 168.5,
+    "lift": 0.0,
+    "planted": true
+   }
+  }
+ ],
+ "stand": {
+  "file": "walk-stand.webp",
+  "source": "../him-side.png",
+  "offsetX": 46,
+  "offsetY": 10,
+  "closestCycleFrame": 6,
+  "lowerBodyIoU": [
+   0.659,
+   0.658,
+   0.744,
+   0.701,
+   0.715,
+   0.685,
+   0.658,
+   0.652,
+   0.742,
+   0.694,
+   0.701,
+   0.692
+  ]
+ },
+ "start": {
+  "file": "walk-start-strip.webp",
+  "filePng": "walk-start-strip.png",
+  "frames": 12,
+  "fps": 20,
+  "t": [
+   0.0,
+   0.5,
+   1.0,
+   1.5,
+   2.0,
+   2.5,
+   3.0,
+   3.5,
+   4.0,
+   4.5,
+   5.0,
+   5.5
+  ],
+  "dx": [
+   0.0,
+   1.12,
+   3.0,
+   5.56,
+   9.0,
+   13.5,
+   19.0,
+   25.5,
+   33.0,
+   41.5,
+   51.0,
+   61.62
+  ],
+  "hipY": [
+   396.0,
+   396.46,
+   397.0,
+   397.45,
+   397.6,
+   397.05,
+   396.2,
+   395.08,
+   394.4,
+   394.93,
+   396.5,
+   399.82
+  ],
+  "frames10fps": [
+   0,
+   2,
+   4,
+   6,
+   8,
+   10
+  ],
+  "feet": [
+   {
+    "near": {
+     "x": 130.5,
+     "heel": 52.5,
+     "toe": 174.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 173.5,
+     "heel": 95.5,
+     "toe": 217.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 129.3,
+     "heel": 51.9,
+     "toe": 173.4,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 172.4,
+     "heel": 94.4,
+     "toe": 216.4,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 132.4,
+     "heel": 51.5,
+     "toe": 171.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 170.5,
+     "heel": 92.5,
+     "toe": 214.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 132.8,
+     "heel": 52.3,
+     "toe": 168.9,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 167.9,
+     "heel": 89.9,
+     "toe": 211.9,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 129.3,
+     "heel": 52.9,
+     "toe": 165.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 164.5,
+     "heel": 86.5,
+     "toe": 208.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 137.5,
+     "heel": 41.2,
+     "toe": 148.5,
+     "lift": 0.5,
+     "planted": false
+    },
+    "far": {
+     "x": 160.0,
+     "heel": 82.1,
+     "toe": 204.0,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 131.3,
+     "heel": 35.0,
+     "toe": 136.2,
+     "lift": 2.0,
+     "planted": false
+    },
+    "far": {
+     "x": 154.5,
+     "heel": 76.7,
+     "toe": 198.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 153.2,
+     "heel": 52.6,
+     "toe": 158.1,
+     "lift": 0.5,
+     "planted": false
+    },
+    "far": {
+     "x": 148.0,
+     "heel": 70.3,
+     "toe": 192.0,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 184.3,
+     "heel": 80.2,
+     "toe": 193.4,
+     "lift": 2.0,
+     "planted": false
+    },
+    "far": {
+     "x": 140.5,
+     "heel": 63.0,
+     "toe": 184.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 217.9,
+     "heel": 112.8,
+     "toe": 231.8,
+     "lift": 2.7,
+     "planted": false
+    },
+    "far": {
+     "x": 133.9,
+     "heel": 55.1,
+     "toe": 176.0,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 226.5,
+     "heel": 142.9,
+     "toe": 264.7,
+     "lift": 7.4,
+     "planted": false
+    },
+    "far": {
+     "x": 127.4,
+     "heel": 46.5,
+     "toe": 166.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 175.6,
+     "heel": 158.8,
+     "toe": 279.8,
+     "lift": 7.1,
+     "planted": false
+    },
+    "far": {
+     "x": 117.8,
+     "heel": 36.4,
+     "toe": 155.9,
+     "lift": 0.0,
+     "planted": true
+    }
+   }
+  ],
+  "joinCycleFrame": 0,
+  "joinCycleFrame24": 0,
+  "joinDx": 73.0
+ },
+ "stopRight": {
+  "file": "walk-stop-r-strip.webp",
+  "filePng": "walk-stop-r-strip.png",
+  "frames": 16,
+  "fps": 20,
+  "t": [
+   0.5,
+   1.0,
+   1.5,
+   2.0,
+   2.5,
+   3.0,
+   3.5,
+   4.0,
+   4.5,
+   5.0,
+   5.5,
+   6.0,
+   6.5,
+   7.0,
+   7.5,
+   8.0
+  ],
+  "dx": [
+   11.69,
+   23.0,
+   33.75,
+   44.0,
+   53.81,
+   63.0,
+   71.38,
+   79.0,
+   85.88,
+   92.0,
+   97.38,
+   102.0,
+   105.94,
+   109.0,
+   110.94,
+   112.0
+  ],
+  "hipY": [
+   404.91,
+   405.5,
+   403.66,
+   401.0,
+   398.84,
+   397.0,
+   395.73,
+   395.0,
+   394.96,
+   395.4,
+   396.36,
+   397.2,
+   397.05,
+   396.6,
+   396.26,
+   396.0
+  ],
+  "frames10fps": [
+   1,
+   3,
+   5,
+   7,
+   9,
+   11,
+   13,
+   15
+  ],
+  "feet": [
+   {
+    "near": {
+     "x": 165.8,
+     "heel": 152.5,
+     "toe": 273.1,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 96.6,
+     "heel": 18.6,
+     "toe": 132.8,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 216.5,
+     "heel": 141.4,
+     "toe": 263.2,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 86.2,
+     "heel": 12.0,
+     "toe": 121.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 208.8,
+     "heel": 130.7,
+     "toe": 252.7,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 105.8,
+     "heel": 11.3,
+     "toe": 116.8,
+     "lift": 0.5,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 198.5,
+     "heel": 120.5,
+     "toe": 242.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 113.3,
+     "heel": 17.0,
+     "toe": 118.2,
+     "lift": 2.0,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 188.7,
+     "heel": 110.7,
+     "toe": 232.7,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 135.4,
+     "heel": 34.2,
+     "toe": 140.3,
+     "lift": 0.5,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 179.5,
+     "heel": 101.5,
+     "toe": 223.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 159.3,
+     "heel": 55.2,
+     "toe": 168.4,
+     "lift": 2.0,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 171.1,
+     "heel": 93.1,
+     "toe": 215.1,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 179.3,
+     "heel": 73.7,
+     "toe": 191.3,
+     "lift": 0.5,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 163.5,
+     "heel": 85.5,
+     "toe": 207.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 188.0,
+     "heel": 90.0,
+     "toe": 210.5,
+     "lift": 4.1,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 156.6,
+     "heel": 78.6,
+     "toe": 200.6,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 182.3,
+     "heel": 102.5,
+     "toe": 224.4,
+     "lift": 6.4,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 150.5,
+     "heel": 72.5,
+     "toe": 194.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 185.3,
+     "heel": 110.2,
+     "toe": 232.1,
+     "lift": 6.2,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 145.1,
+     "heel": 67.1,
+     "toe": 189.1,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 187.9,
+     "heel": 109.6,
+     "toe": 231.5,
+     "lift": 3.0,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 140.5,
+     "heel": 62.5,
+     "toe": 184.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 183.5,
+     "heel": 105.5,
+     "toe": 227.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 136.6,
+     "heel": 58.6,
+     "toe": 180.6,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 179.6,
+     "heel": 101.6,
+     "toe": 223.6,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 133.5,
+     "heel": 55.5,
+     "toe": 177.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 176.5,
+     "heel": 98.5,
+     "toe": 220.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 131.6,
+     "heel": 53.6,
+     "toe": 175.6,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 174.6,
+     "heel": 96.6,
+     "toe": 218.6,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 130.5,
+     "heel": 52.5,
+     "toe": 174.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 173.5,
+     "heel": 95.5,
+     "toe": 217.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   }
+  ],
+  "afterCycleFrame": 0,
+  "afterCycleFrame24": 0,
+  "lastFrameIsStand": true
+ },
+ "stopLeft": {
+  "file": "walk-stop-l-strip.webp",
+  "filePng": "walk-stop-l-strip.png",
+  "frames": 12,
+  "fps": 20,
+  "t": [
+   0.5,
+   1.0,
+   1.5,
+   2.0,
+   2.5,
+   3.0,
+   3.5,
+   4.0,
+   4.5,
+   5.0,
+   5.5,
+   6.0
+  ],
+  "dx": [
+   10.88,
+   21.0,
+   30.44,
+   39.0,
+   46.5,
+   53.0,
+   58.5,
+   63.0,
+   66.5,
+   69.0,
+   70.38,
+   71.0
+  ],
+  "hipY": [
+   404.88,
+   405.5,
+   403.86,
+   401.5,
+   399.7,
+   398.2,
+   397.21,
+   396.6,
+   396.43,
+   396.4,
+   396.19,
+   396.0
+  ],
+  "frames10fps": [
+   1,
+   3,
+   5,
+   7,
+   9,
+   11
+  ],
+  "feet": [
+   {
+    "near": {
+     "x": 95.4,
+     "heel": 17.4,
+     "toe": 131.6,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 168.6,
+     "heel": 155.3,
+     "toe": 275.9,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 86.2,
+     "heel": 12.0,
+     "toe": 121.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 220.5,
+     "heel": 145.4,
+     "toe": 267.2,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 102.4,
+     "heel": 7.2,
+     "toe": 113.3,
+     "lift": 0.5,
+     "planted": false
+    },
+    "far": {
+     "x": 214.1,
+     "heel": 136.0,
+     "toe": 258.0,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 105.8,
+     "heel": 7.2,
+     "toe": 110.7,
+     "lift": 2.0,
+     "planted": false
+    },
+    "far": {
+     "x": 205.5,
+     "heel": 127.5,
+     "toe": 249.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 123.8,
+     "heel": 19.6,
+     "toe": 130.7,
+     "lift": 0.5,
+     "planted": false
+    },
+    "far": {
+     "x": 198.0,
+     "heel": 120.0,
+     "toe": 242.0,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 141.3,
+     "heel": 35.9,
+     "toe": 154.2,
+     "lift": 2.0,
+     "planted": false
+    },
+    "far": {
+     "x": 191.5,
+     "heel": 113.5,
+     "toe": 235.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 141.2,
+     "heel": 47.2,
+     "toe": 168.4,
+     "lift": 2.6,
+     "planted": false
+    },
+    "far": {
+     "x": 186.0,
+     "heel": 108.0,
+     "toe": 230.0,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 132.8,
+     "heel": 54.9,
+     "toe": 176.9,
+     "lift": 2.6,
+     "planted": false
+    },
+    "far": {
+     "x": 181.5,
+     "heel": 103.5,
+     "toe": 225.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 134.2,
+     "heel": 56.1,
+     "toe": 178.1,
+     "lift": 1.3,
+     "planted": false
+    },
+    "far": {
+     "x": 178.0,
+     "heel": 100.0,
+     "toe": 222.0,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 132.5,
+     "heel": 54.5,
+     "toe": 176.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 175.5,
+     "heel": 97.5,
+     "toe": 219.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 131.1,
+     "heel": 53.1,
+     "toe": 175.1,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 174.1,
+     "heel": 96.1,
+     "toe": 218.1,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 130.5,
+     "heel": 52.5,
+     "toe": 174.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 173.5,
+     "heel": 95.5,
+     "toe": 217.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   }
+  ],
+  "afterCycleFrame": 6,
+  "afterCycleFrame24": 12,
+  "lastFrameIsStand": true
+ },
+ "alt24": {
+  "file": "walk-strip-24.webp",
+  "frames": 24,
+  "fps": 20,
+  "contactFrames": [
+   0,
+   12
+  ],
+  "hipY": [
+   403.0,
+   404.25,
+   404.0,
+   401.34,
+   398.0,
+   395.47,
+   393.5,
+   392.16,
+   392.0,
+   394.03,
+   398.53,
+   401.49,
+   403.0,
+   404.25,
+   404.0,
+   401.34,
+   398.0,
+   395.47,
+   393.5,
+   392.16,
+   392.0,
+   394.03,
+   398.53,
+   401.49
+  ],
+  "feet": [
+   {
+    "near": {
+     "x": 173.5,
+     "heel": 164.2,
+     "toe": 282.6,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 107.4,
+     "heel": 26.1,
+     "toe": 144.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 165.5,
+     "heel": 152.2,
+     "toe": 272.8,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 96.3,
+     "heel": 17.3,
+     "toe": 132.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 215.5,
+     "heel": 140.4,
+     "toe": 262.2,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 85.2,
+     "heel": 9.4,
+     "toe": 120.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 206.6,
+     "heel": 128.5,
+     "toe": 250.4,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 95.5,
+     "heel": 11.8,
+     "toe": 116.5,
+     "lift": 4.0,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 194.5,
+     "heel": 116.5,
+     "toe": 238.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 123.1,
+     "heel": 23.5,
+     "toe": 130.0,
+     "lift": 4.2,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 182.5,
+     "heel": 104.5,
+     "toe": 226.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 152.3,
+     "heel": 49.4,
+     "toe": 160.3,
+     "lift": 3.1,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 170.5,
+     "heel": 92.5,
+     "toe": 214.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 186.2,
+     "heel": 80.4,
+     "toe": 196.5,
+     "lift": 3.2,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 158.5,
+     "heel": 80.6,
+     "toe": 202.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 214.1,
+     "heel": 108.5,
+     "toe": 228.0,
+     "lift": 5.9,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 146.5,
+     "heel": 68.7,
+     "toe": 190.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 223.8,
+     "heel": 133.9,
+     "toe": 255.4,
+     "lift": 8.8,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 134.5,
+     "heel": 56.9,
+     "toe": 178.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 233.3,
+     "heel": 155.1,
+     "toe": 277.0,
+     "lift": 10.4,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 122.5,
+     "heel": 45.3,
+     "toe": 166.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 184.1,
+     "heel": 169.3,
+     "toe": 290.1,
+     "lift": 8.2,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 115.4,
+     "heel": 34.3,
+     "toe": 154.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 180.8,
+     "heel": 171.5,
+     "toe": 290.6,
+     "lift": 3.2,
+     "planted": false
+    }
+   },
+   {
+    "near": {
+     "x": 105.4,
+     "heel": 24.1,
+     "toe": 142.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 175.5,
+     "heel": 166.2,
+     "toe": 284.6,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 94.3,
+     "heel": 15.3,
+     "toe": 130.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 167.5,
+     "heel": 154.2,
+     "toe": 274.8,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 83.2,
+     "heel": 7.4,
+     "toe": 118.5,
+     "lift": 0.0,
+     "planted": true
+    },
+    "far": {
+     "x": 217.5,
+     "heel": 142.4,
+     "toe": 264.2,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 93.5,
+     "heel": 9.8,
+     "toe": 114.5,
+     "lift": 4.0,
+     "planted": false
+    },
+    "far": {
+     "x": 208.6,
+     "heel": 130.5,
+     "toe": 252.4,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 121.1,
+     "heel": 21.5,
+     "toe": 128.0,
+     "lift": 4.2,
+     "planted": false
+    },
+    "far": {
+     "x": 196.5,
+     "heel": 118.5,
+     "toe": 240.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 150.3,
+     "heel": 47.4,
+     "toe": 158.3,
+     "lift": 3.1,
+     "planted": false
+    },
+    "far": {
+     "x": 184.5,
+     "heel": 106.5,
+     "toe": 228.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 184.2,
+     "heel": 78.4,
+     "toe": 194.5,
+     "lift": 3.2,
+     "planted": false
+    },
+    "far": {
+     "x": 172.5,
+     "heel": 94.5,
+     "toe": 216.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 212.1,
+     "heel": 106.5,
+     "toe": 226.0,
+     "lift": 5.9,
+     "planted": false
+    },
+    "far": {
+     "x": 160.5,
+     "heel": 82.6,
+     "toe": 204.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 221.8,
+     "heel": 131.9,
+     "toe": 253.4,
+     "lift": 8.8,
+     "planted": false
+    },
+    "far": {
+     "x": 148.5,
+     "heel": 70.7,
+     "toe": 192.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 231.3,
+     "heel": 153.1,
+     "toe": 275.0,
+     "lift": 10.4,
+     "planted": false
+    },
+    "far": {
+     "x": 136.5,
+     "heel": 58.9,
+     "toe": 180.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 182.1,
+     "heel": 167.3,
+     "toe": 288.1,
+     "lift": 8.2,
+     "planted": false
+    },
+    "far": {
+     "x": 124.5,
+     "heel": 47.3,
+     "toe": 168.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   },
+   {
+    "near": {
+     "x": 178.8,
+     "heel": 169.5,
+     "toe": 288.6,
+     "lift": 3.2,
+     "planted": false
+    },
+    "far": {
+     "x": 117.4,
+     "heel": 36.3,
+     "toe": 156.5,
+     "lift": 0.0,
+     "planted": true
+    }
+   }
+  ]
+ },
+ "notes": "Him walking RIGHT in profile, both hands on the bouquet. We see his RIGHT side: near leg (full colour) = RIGHT, far leg (darker, behind) = LEFT. 12-frame cycle: frame 0 = right heel strike (right foot forward), 6 = left heel strike; 0/6 contact, 1/7 down (lowest), 3/9 passing, 4/10 up (highest). The 24-frame strip has the same phases at double the index. RECOMMENDED: walk-strip-24 at 20 fps with the position snapped to the frame grid (see 'recommended'). Registration: every cell has the hip pivot at (hipX, hipY[frame]) and the ground (bottom of the planted near sole) at groundY; the far foot plants on farGroundY (10 px higher = depth, as in him-side.png). Draw a cell so its (hipX, groundY) lands on his ground point; scale = desiredHeight/604 (cells are at him-side.png pixel scale). Hip x is constant in the cell and a planted foot moves back exactly strideCycle/frames px per frame, so frame = floor(d/strideCycle*frames) % frames keeps planted feet still when the sprite is drawn at x0 + floor(d/(strideCycle/frames))*(strideCycle/frames) (snapped). Moving the sprite continuously instead makes a planted foot creep up to strideCycle/frames px per held frame. Pace: speed = 240 sprite px/s (strideCycle 288 per 1.2 s, two steps). START: play walk-start-strip at its fps from the standing pose (its frame 0 IS walk-stand), drawing each frame with the hip at standX + start.dx[i]; then continue with cycle frame 0 at standX + start.joinDx (73) and keep walking (x0 = standX + joinDx, d = 0). STOP: end the walk on a heel strike - cycle frame 0 (right foot forward; 24-strip frame 0) -> play walk-stop-r-strip, or cycle frame 6 (left foot forward; 24-strip frame 12) -> play walk-stop-l-strip - drawing frame i with the hip at (where that cycle frame was drawn) + dx[i]. Feet stay planted throughout. The last stop frame IS walk-stand (pixel-identical to him-side.png, the far leg dissolves into the source's own far leg over the last frames), so no cross-fade is needed. Sequences are 20 fps; for 10 fps play only the indices in frames10fps. feet[] gives per-frame sole centre x, heel/toe x, lift above its ground and a planted flag (for contact shadows). walk-strip (12) at 10 fps is the light-weight fallback."
+}
