@@ -1,0 +1,310 @@
+/* ==========================================================================
+   stage1.css — "For You…"   every rule scoped under #stage-1
+   Layers (bottom → top): world (bg, glow, leaks, blurred roses, flare) ·
+   back particles · content · gate · flash · front particles
+   ========================================================================== */
+#stage-1 { background: var(--ink); color: var(--text); }
+
+#stage-1 .s1-root { position: absolute; inset: 0; overflow: hidden; }
+
+/* ----------------------------------------------------------------- world */
+#stage-1 .s1-world {
+  position: absolute; inset: -4%;
+  transform-origin: 50% 46%;
+  will-change: transform;
+  pointer-events: none;
+}
+#stage-1 .s1-base,
+#stage-1 .s1-awake { position: absolute; inset: 0; }
+#stage-1 .s1-base {
+  background:
+    radial-gradient(ellipse 85% 55% at 50% 44%, #430c20 0%, #2a0712 36%, #14040a 68%, #070103 100%);
+}
+#stage-1 .s1-glow {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 62% 42% at 50% 45%, rgba(200, 40, 79, 0.3) 0%, rgba(125, 29, 59, 0.16) 38%, rgba(61, 11, 28, 0.05) 66%, transparent 82%);
+  will-change: transform, opacity;
+}
+#stage-1 .s1-leak { position: absolute; border-radius: 50%; will-change: transform, opacity; }
+#stage-1 .s1-leak--a {
+  left: -26%; top: -20%; width: 86%; height: 62%;
+  background: radial-gradient(closest-side, rgba(255, 196, 170, 0.15), rgba(240, 140, 130, 0.06) 52%, transparent 100%);
+}
+#stage-1 .s1-leak--b {
+  right: -30%; bottom: -16%; width: 95%; height: 58%;
+  background: radial-gradient(closest-side, rgba(224, 90, 122, 0.2), rgba(179, 18, 58, 0.08) 55%, transparent 100%);
+}
+#stage-1 .s1-flare {
+  position: absolute; left: 50%; top: 46%;
+  width: 120vmin; height: 120vmin; margin: -60vmin 0 0 -60vmin;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 228, 200, 0.42), rgba(241, 169, 185, 0.2) 34%, rgba(200, 40, 79, 0.08) 62%, transparent 100%);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* out-of-focus roses — mobile-first placement */
+#stage-1 .s1-bloom { position: absolute; will-change: transform; }
+#stage-1 .s1-bloom__drift { will-change: transform; }
+#stage-1 .s1-bloom svg { display: block; width: 100%; height: auto; max-width: none; overflow: visible; }
+#stage-1 .s1-bloom--a { width: 118vw; left: -50vw; bottom: -20vh; opacity: 0.62; }
+#stage-1 .s1-bloom--b { width: 74vw; right: -30vw; top: -9vh; opacity: 0.5; }
+#stage-1 .s1-bloom--c { width: 30vw; left: 2vw; top: 13vh; opacity: 0.4; }
+
+/* ------------------------------------------------------------- particles */
+#stage-1 .s1-fx {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; max-width: none;
+  pointer-events: none;
+}
+#stage-1 .s1-fx--back { z-index: 1; }
+#stage-1 .s1-fx--front { z-index: 5; }
+
+/* --------------------------------------------------------------- content */
+#stage-1 .s1-content {
+  position: absolute; inset: 0; z-index: 2;
+  display: grid; place-items: center;
+  padding: calc(var(--safe-top) + 64px) var(--gutter) calc(var(--safe-bottom) + 64px);
+  text-align: center;
+}
+#stage-1 .s1-stack {
+  display: flex; flex-direction: column; align-items: center;
+  width: 100%; max-width: 64rem;
+  margin-top: -3vh;
+}
+
+#stage-1 .s1-eyebrow {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  margin: 0 0 clamp(14px, 2.8vh, 32px);
+  color: var(--gold-300);
+  text-shadow: 0 0 18px rgba(217, 178, 111, 0.35);
+}
+#stage-1 .s1-eyebrow__text { margin-right: -0.32em; } /* optical centring of the trailing letter-space */
+#stage-1 .s1-rule {
+  display: block; width: clamp(26px, 8vw, 72px); height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(240, 217, 168, 0.85));
+  transform-origin: 100% 50%;
+}
+#stage-1 .s1-rule--r { background: linear-gradient(270deg, transparent, rgba(240, 217, 168, 0.85)); transform-origin: 0 50%; }
+
+#stage-1 .s1-heading { margin: 0; font-weight: 400; display: flex; flex-direction: column; align-items: center; }
+
+#stage-1 .s1-title {
+  display: block;
+  font-size: clamp(2.35rem, min(13.4vw, 7.1vh), 4.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.005em;
+  color: var(--text);
+  text-wrap: balance;
+  text-shadow: 0 2px 28px rgba(10, 3, 5, 0.55);
+  max-width: 100%;
+}
+#stage-1 .s1-title .split-word { padding: 0 0.01em; }
+#stage-1 .s1-title .s1-num {
+  font-style: italic;
+  padding: 0 0.1em 0 0.04em; margin: 0 -0.06em 0 -0.02em;
+  background: linear-gradient(100deg, var(--gold-600) 0%, var(--gold-300) 38%, #fff3d9 52%, var(--gold-300) 64%, var(--gold-500) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+#stage-1 .s1-scriptline {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  font-size: clamp(3.5rem, min(20vw, 9.6vh), 6rem);
+  line-height: 1;
+  margin-top: -0.06em;
+}
+#stage-1 .s1-scriptglow {
+  position: absolute; left: 50%; top: 52%;
+  width: 4.6em; height: 1.6em; margin: -0.8em 0 0 -2.3em;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(224, 90, 122, 0.3), rgba(179, 18, 58, 0.1) 55%, transparent 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+#stage-1 .s1-scriptwrap {
+  --wipe: 0%;
+  display: inline-block;
+  padding: 0.06em 0.24em 0.2em;
+  margin: 0 -0.2em 0 -0.24em;
+  -webkit-mask-image: linear-gradient(90deg, #000 45%, transparent 55%);
+          mask-image: linear-gradient(90deg, #000 45%, transparent 55%);
+  -webkit-mask-size: 240% 100%; mask-size: 240% 100%;
+  -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+  -webkit-mask-position: var(--wipe) 0; mask-position: var(--wipe) 0;
+}
+#stage-1 .s1-script {
+  display: inline-block;
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.2;
+  padding: 0.04em 0.2em 0.1em;
+  background: linear-gradient(100deg,
+    #f1a9b9 0%, #f8d6df 14%, #f0d9a8 28%, #fff3d9 34%, #f0d9a8 40%, #f4b3c3 54%, #e98aa2 70%, #f8d6df 86%, #f1a9b9 100%);
+  background-size: 200% 100%;
+  background-repeat: repeat-x;
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  animation: s1-shimmer 10s linear infinite;
+}
+@keyframes s1-shimmer { from { background-position: 0% 0; } to { background-position: -200% 0; } }
+
+#stage-1 .s1-heart {
+  display: inline-block;
+  width: 0.23em; height: 0.23em;
+  margin: -0.42em 0 0 -0.1em;
+  flex: none;
+}
+#stage-1 .s1-heart__svg {
+  width: 100%; height: 100%; overflow: visible;
+  filter: drop-shadow(0 0 0.09em rgba(239, 111, 143, 0.75));
+  transform-origin: 50% 55%;
+}
+
+#stage-1 .s1-sub {
+  margin: clamp(10px, 1.8vh, 22px) 0 0;
+  max-width: 22ch;
+  font-size: clamp(1.14rem, 1rem + 0.6vw, 1.45rem);
+  line-height: 1.45;
+  color: rgba(251, 238, 241, 0.78);
+  text-wrap: balance;
+}
+#stage-1 .s1-sent { display: inline; }
+
+#stage-1 .s1-actions { margin-top: clamp(26px, 5vh, 54px); }
+#stage-1 .s1-cta { min-width: 15.5em; }
+#stage-1 .s1-cta[disabled] { opacity: 1; }
+
+#stage-1 .s1-foot {
+  position: absolute; left: 0; right: 0;
+  bottom: calc(var(--safe-bottom) + clamp(18px, 3.4vh, 34px));
+  margin: 0; padding: 0 var(--gutter);
+  font-size: 0.6rem; letter-spacing: 0.36em;
+  color: rgba(240, 217, 168, 0.5);
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------ gate */
+#stage-1 .s1-gate {
+  position: absolute; inset: 0; z-index: 3;
+  width: 100%; height: 100%;
+  display: grid; place-items: center;
+  margin: 0; padding: var(--gutter);
+  border: 0; border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none; user-select: none;
+  touch-action: manipulation;
+}
+#stage-1 .s1-gate:focus { outline: none; }
+#stage-1 .s1-gate__center {
+  display: flex; flex-direction: column; align-items: center;
+  margin-top: -4vh;
+}
+#stage-1 .s1-gate__heart {
+  position: relative;
+  width: 84px; height: 84px;
+  display: grid; place-items: center;
+  margin-bottom: 30px;
+}
+#stage-1 .s1-gate__halo {
+  position: absolute; left: 50%; top: 50%;
+  width: 280px; height: 280px; margin: -140px 0 0 -140px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(224, 90, 122, 0.34), rgba(200, 40, 79, 0.12) 42%, transparent 100%);
+  opacity: 0.55;
+  pointer-events: none;
+}
+#stage-1 .s1-ring {
+  position: absolute; left: 50%; top: 50%;
+  width: 92px; height: 92px; margin: -46px 0 0 -46px;
+  border-radius: 50%;
+  border: 1px solid rgba(240, 217, 168, 0.5);
+  opacity: 0;
+  pointer-events: none;
+}
+#stage-1 .s1-gate__svg {
+  position: relative;
+  width: 60px; height: 60px; overflow: visible;
+  filter: drop-shadow(0 0 14px rgba(239, 111, 143, 0.7)) drop-shadow(0 0 34px rgba(200, 40, 79, 0.45));
+  transform-origin: 50% 55%;
+}
+#stage-1 .s1-gate__text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 1.2rem + 0.7vw, 1.8rem);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  text-shadow: 0 0 24px rgba(224, 90, 122, 0.35);
+}
+#stage-1 .s1-gate__hint {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 14px;
+  font-family: var(--font-ui);
+  font-size: 0.62rem; font-weight: 600;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold-300);
+}
+#stage-1 .s1-gate__hint > span { margin-right: -0.3em; }
+#stage-1 .s1-gate__icon { width: 15px; height: 15px; flex: none; }
+#stage-1 .s1-gate:focus-visible .s1-gate__text { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; text-decoration-color: rgba(240, 217, 168, 0.6); }
+
+/* the heart blooming into light */
+#stage-1 .s1-flash {
+  position: absolute; left: 0; top: 0; z-index: 4;
+  width: 90vmax; height: 90vmax;
+  border-radius: 50%;
+  background: radial-gradient(closest-side,
+    rgba(255, 246, 234, 0.95) 0%, rgba(255, 214, 224, 0.6) 10%, rgba(240, 120, 150, 0.3) 26%,
+    rgba(160, 30, 70, 0.12) 50%, transparent 100%);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* -------------------------------------------------- tablet / desktop */
+@media (min-width: 640px) {
+  #stage-1 .s1-title { font-size: clamp(3rem, min(9.3vw, 10.4vh), 6.6rem); }
+  #stage-1 .s1-scriptline { font-size: clamp(4.2rem, min(13vw, 13.6vh), 8.8rem); }
+  #stage-1 .s1-sub { max-width: 34ch; }
+  #stage-1 .s1-sent { display: block; }
+  #stage-1 .s1-bloom--a { width: 78vmax; left: -30vmax; bottom: -32vmax; }
+  #stage-1 .s1-bloom--b { width: 48vmax; right: -16vmax; top: -18vmax; }
+  #stage-1 .s1-bloom--c { width: 17vmax; left: auto; right: 9vw; top: auto; bottom: 10vh; }
+}
+@media (min-width: 1100px) {
+  #stage-1 .s1-gate__heart { width: 96px; height: 96px; }
+  #stage-1 .s1-gate__svg { width: 68px; height: 68px; }
+}
+
+/* ------------------------------------------- phone landscape / short */
+@media (max-height: 520px) and (orientation: landscape) {
+  #stage-1 .s1-content { padding: calc(var(--safe-top) + 14px) calc(var(--gutter) + 40px) calc(var(--safe-bottom) + 14px); }
+  #stage-1 .s1-stack { margin-top: 0; }
+  #stage-1 .s1-eyebrow { margin-bottom: 8px; }
+  #stage-1 .s1-title { font-size: clamp(1.9rem, 10.6vh, 3rem); }
+  #stage-1 .s1-scriptline { font-size: clamp(2.6rem, 14.5vh, 4rem); margin-top: -0.1em; }
+  #stage-1 .s1-sub { max-width: 46ch; margin-top: 2px; font-size: clamp(0.98rem, 4.4vh, 1.15rem); }
+  #stage-1 .s1-actions { margin-top: clamp(12px, 3.6vh, 22px); }
+  #stage-1 .s1-cta { min-height: 46px; padding: 0.75em 1.9em; }
+  #stage-1 .s1-foot { display: none; }
+  #stage-1 .s1-gate__center { margin-top: 0; }
+  #stage-1 .s1-gate__heart { width: 72px; height: 72px; margin-bottom: 18px; }
+  #stage-1 .s1-gate__svg { width: 52px; height: 52px; }
+  #stage-1 .s1-bloom--a { width: 70vmax; left: -26vmax; bottom: -34vmax; }
+  #stage-1 .s1-bloom--b { width: 44vmax; right: -14vmax; top: -20vmax; }
+  #stage-1 .s1-bloom--c { width: 16vmax; left: auto; right: 7vw; top: auto; bottom: 8vh; }
+}
+
+/* ------------------------------------------------------ reduced motion */
+#stage-1.s1--reduced .s1-script { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  #stage-1 .s1-script { animation: none; }
+}
