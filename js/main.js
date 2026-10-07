@@ -75,6 +75,10 @@
     await Love.go(first, { instant: true });
     document.getElementById('loader').classList.add('is-done');
 
+    // warm the song so it starts the instant the visitor taps the opening screen
+    const songSrc = C.music && C.music.src;
+    if (songSrc) { const a = new Audio(); a.preload = 'auto'; a.src = songSrc; }
+
     // the walk strips stage 3 draws (start, 24-frame cycle, stop on the left
     // heel: WALK_STEPS is odd) are ~1.7 MB: fetch them quietly during stages 1–2
     util.preload([

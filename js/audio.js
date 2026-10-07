@@ -41,6 +41,16 @@
   const pick = (arr) => arr[(Math.random() * arr.length) | 0];
   const settle = (p) => { if (p && typeof p.catch === 'function') p.catch(() => {}); };
 
+  /* How a finished song responds to intensity. Unlike the generated score — where
+     intensity *is* the arrangement — a real recording already has its dynamics, so
+     intensity only shapes level and opens the top end. It must still be clearly
+     audible from the very first tap, hence the high floor. Used by both the routed
+     (Web Audio) and direct (<audio>.volume) paths. */
+  const SONG_FLOOR = 0.62;                 // level at intensity 0
+  const SONG_LP_LO = 9000, SONG_LP_HI = 20000;
+  const songGain = (I, vol) => (SONG_FLOOR + (1 - SONG_FLOOR) * clamp(+I || 0, 0, 1)) * vol;
+  const songCutoff = (I) => SONG_LP_LO * Math.pow(SONG_LP_HI / SONG_LP_LO, clamp(+I || 0, 0, 1));
+
   /* ======================================================================
      THE SCORE  (MIDI numbers; Db4 = 61, C=0 … Db=1, Eb=3, F=5, Gb=6, Ab=8, Bb=10)
      ====================================================================== */
@@ -762,12 +772,12 @@
     const mute = (m, now, secs) => ramp(master.gain, m ? 0 : 1, now, secs);
 
     function connectSong(node, vol) {
-      const g = G(0), lp = F('lowpass', 8000, 0.5);
+      const g = G(0), lp = F('lowpass', SONG_LP_HI, 0.5);
       node.connect(g); g.connect(lp); lp.connect(musicDry);
       return {
         set(I, secs, now) {
-          ramp(g.gain, (0.45 + 0.55 * I) * vol, now, secs);
-          ramp(lp.frequency, 3000 * Math.pow(20000 / 3000, I), now, secs);
+          ramp(g.gain, songGain(I, vol), now, secs);
+          ramp(lp.frequency, songCutoff(I), now, secs);
         },
         disconnect() { kill(node, g, lp); },
       };
@@ -875,7 +885,7 @@
     if (!song || song.failed) return;
     const vol = clamp(music.volume == null ? 0.8 : +music.volume, 0, 1);
     if (song.ctl) song.ctl.set(state.intensity, secs, ctx.currentTime);
-    else if (song.direct) song.direct.set('base', (0.45 + 0.55 * state.intensity) * vol, secs);
+    else if (song.direct) song.direct.set('base', songGain(state.intensity, vol), secs);
   }
   function songFail() {
     if (!song || song.failed) return;

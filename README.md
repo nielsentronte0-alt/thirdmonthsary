@@ -25,9 +25,10 @@ Double-click `index.html`. That's it — it works offline, no install, no server
 **Add a photo:** save it as `assets/photos/<name>.webp` **and** `.jpg`, then add an
 entry to `stage2.moments` with `photo: 'assets/photos/<name>'` (no extension).
 
-**Use your song:** put an mp3 in `assets/audio/` and set
-`music: { src: 'assets/audio/our-song.mp3', volume: 0.8 }`. Otherwise the site plays
-its own soft generated piano score that swells during the walking scene.
+**The music:** `assets/audio/our-song.mp3` starts the moment the visitor taps
+the opening screen. To swap it, replace that file (or point `music.src` at
+another path). Set `music.src: null` to go back to the site's own soft
+generated piano score that swells during the walking scene.
 
 **Use your own art for her:** a transparent PNG/WebP of her full body facing left,
 feet at the bottom edge → `her: { sprite: 'assets/character/her.png' }`.

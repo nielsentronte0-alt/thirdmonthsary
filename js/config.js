@@ -14,11 +14,10 @@ window.LOVE_CONFIG = {
      story stage shows a live "days together" counter. Leave null to hide. */
   startDate: null,
 
-  /* Music. By default the site plays its own soft, generated piano score
-     that swells during the walking scene. To use your song instead, drop an
-     mp3 in assets/audio/ and set src: 'assets/audio/our-song.mp3'. */
+  /* Music. Your song plays the moment the visitor taps the opening screen.
+     Set src: null to go back to the site's own soft, generated piano score. */
   music: {
-    src: null,
+    src: 'assets/audio/our-song.mp3',
     volume: 0.8,
   },
 
