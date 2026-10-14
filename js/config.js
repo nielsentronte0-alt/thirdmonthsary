@@ -124,9 +124,13 @@ window.LOVE_CONFIG = {
     letter: {
       greeting: 'To my love,',
       paragraphs: [
-        'Three months ago I didn’t know that someone could become my favourite part of every single day. Now I can’t imagine a day without you in it.',
-        'Thank you for the late-night calls, for your patience, for your laugh, and for choosing me even on the days I’m not easy to choose. You make me want to be better — not because you ask me to, but because you deserve it.',
-        'I don’t know everything the next months will bring, but I know I want to spend them with you. Same cap, same bouquet, same heart — always walking toward you.',
+        'Another month with you, my love. ❤️',
+        'Ik, naa jud tay mga kaagi nga usahay down tang duha, and sometimes ma drain ta because of our situation nga layo ta sa usag usa. Daghan kaayog doubts and what ifs nga mosulod satong huna huna, and sometimes mao na ang reason nganong mag away ta, mawad an tag gana, and even lose hope sa atong relationship.',
+        'But despite everything, padayon gihapon ko sa pagpalangga nimo, ik usahay dili kaayo ta stable duha, and there are days nga lisod jud ang tanan, but please know nga palangga kaayo tika. I can’t even explain how much I love you. No matter how hard things get, I will always choose you, over and over again.',
+        'I’m sorry sa mga nabuhat nako nga nakapasuko nimo, sa mga times nga tungod sa akong batasan, mag-away na pud ta. I know nga naa koy mga shortcomings, and I’m not perfect, but I’m willing to learn, grow, and become better for us. I don’t want my mistakes to be the reason nga mawala ka sa akong kinabuhi.',
+        'I love you so much, langga. Bisan layo ta karon, bisan naa tay mga struggles and uncertainties, I still believe in us. I hope nga tagaan ta sa Ginoo og maayong path, more patience, understanding, and strength para malampasan nato tanan nga challenges together. I pray nga someday, dili na distance ang atong kalaban, and we can finally be together without all these doubts and what ifs.',
+        'Happy monthsary, my love! Thank you for staying, for loving me, and for being part of my life. No matter how difficult things get, I hope we never forget why we started and why we keep choosing each other.',
+        'Palangga kaayo tika, langga, more than words can explain. Always remember nga ikaw gihapon akong eh choose always mwaaaa',
       ],
       signoff: 'Forever yours,',
       signature: '{hisName}',
