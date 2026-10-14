@@ -20,7 +20,7 @@
     'call-candles': { pos: '50% 50%' },
     'call-genos': { pos: '50% 50%' },
     'her-golden-hour': { pos: '30% 18%' },
-    'robin-starfire': { pos: '50% 42%', wide: true },
+    'call-studio': { pos: '50% 50%' },
   };
   const ROT = [-3.2, 2.6, -2.2, 3.4, -2.6, 2.2];
   const ACCENT = ['tape', 'tape-corner', 'pin'];
